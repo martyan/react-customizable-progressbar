@@ -1,0 +1,47 @@
+.linecap-selector {
+
+	display: flex;
+	justify-content: space-between;
+	width: 95px;
+	margin-top: 5px;
+
+	.option {
+
+		width: 23px;
+		cursor: pointer;
+
+		.fill {
+			fill: #eee;
+			transition: .2s ease;
+		}
+
+		.stroke {
+			fill: #aaa;
+			transition: .2s ease;
+		}
+
+		&:hover {
+			
+			.fill {
+				fill: #ddd;
+			}
+
+			.stroke {
+				fill: #999;
+			}
+
+		}
+
+		&.selected {
+			.fill {
+				fill: #d5d5d5;
+			}
+
+			.stroke {
+				fill: #666;
+			}
+		}
+		
+	}
+
+}

@@ -1,0 +1,61 @@
+.generator {
+
+	background: #f5f5f5;
+	padding: 40px 0;
+
+	.thumbs {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-bottom: 25px;
+	}
+
+	.thumb {
+
+		background: white;
+		padding: 5px;
+		margin: 10px;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: .2s ease;
+	
+		&:hover {
+			transform: scale(1.05);
+		}
+
+	}
+
+	.bar-controls {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+		.bar {
+
+			flex-basis: 320px;
+	    background-color: white;
+	    border-radius: 5px;
+	    margin: 20px;
+
+			@media (min-width: 640px) {
+				margin-right: 30px;
+			}
+
+			.progressbar {
+				margin: 0 auto 20px;
+			}
+			
+		}
+
+	}
+
+	.style-controls {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+}
