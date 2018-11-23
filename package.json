@@ -1,7 +1,7 @@
 {
     "name": "react-customizable-progressbar",
-    "version": "0.1.0",
-    "main": "./dist/Bar.js",
+    "version": "0.1.2",
+    "main": "./dist/ReactCustomizableProgressbar.js",
     "files": [
         "dist"
     ],
