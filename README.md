@@ -16,6 +16,12 @@ Check <a href="http://martinjuzl.com/react-customizable-progressbar-examples.htm
 npm install --save react-customizable-progressbar
 ```
 
+or
+
+```bash
+yarn add react-customizable-progressbar
+```
+
 ### Usage
 
 ```jsx
