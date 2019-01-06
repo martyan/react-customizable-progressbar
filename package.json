@@ -1,6 +1,6 @@
 {
     "name": "react-customizable-progressbar",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "main": "./dist/ReactCustomizableProgressbar.js",
     "files": [
         "dist"
@@ -62,7 +62,7 @@
         "webpack": "^4.20.2",
         "webpack-cli": "^3.1.1",
         "webpack-dev-middleware": "^3.4.0",
-        "webpack-dev-server": "^3.1.9"
+        "webpack-dev-server": "^3.1.14"
     },
     "peerDependencies": {
         "react": "^0.14.0 || ^15.0.0 || ^16.0.0"
