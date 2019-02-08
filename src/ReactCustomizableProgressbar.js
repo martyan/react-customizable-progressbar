@@ -227,19 +227,19 @@ ReactCustomizableProgressbar.defaultProps = {
     cut: 0,
     rotate: -90,
 
-    strokeWidth: 2,
+    strokeWidth: 20,
     strokeColor: 'indianred',
     fillColor: 'none',
     strokeLinecap: 'round',
     transition: ".3s ease",
 
     pointerRadius: 0,
-    pointerStrokeWidth: 2,
+    pointerStrokeWidth: 20,
     pointerStrokeColor: 'indianred',
     pointerFillColor: 'white',
 
     trackStrokeColor: '#e6e6e6',
-    trackStrokeWidth: 2,
+    trackStrokeWidth: 20,
     trackStrokeLinecap: "round",
     trackTransition: ".3s ease",
 
