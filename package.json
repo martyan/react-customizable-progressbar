@@ -1,6 +1,6 @@
 {
     "name": "react-customizable-progressbar",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "main": "./dist/ReactCustomizableProgressbar.js",
     "files": [
         "dist"
@@ -15,11 +15,11 @@
     },
     "description": "Customizable circular SVG progress bar component for React",
     "keywords": [
+        "react",
+        "circular",
         "progress",
         "bar",
         "component",
-        "react",
-        "circular",
         "customizable",
         "svg",
         "animation"
