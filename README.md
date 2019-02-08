@@ -43,16 +43,16 @@ import Bar from 'react-customizable-progressbar'
 | `steps` | `number` | `100` | Total steps |
 | `cut` | `number` | `0` | Angle of the circle sector |
 | `rotate` | `number` | `-90` | Progress rotation |
-| `strokeWidth` | `number` | `2` | Stroke width |
+| `strokeWidth` | `number` | `20` | Stroke width |
 | `strokeColor` | `string` | `'indianred'` | Stroke color |
 | `strokeLinecap` | `string` | `'round'` | Stroke line cap |
 | `transition` | `string` | `'0.3s ease'` | Transition |
-| `trackStrokeWidth` | `number` | `2` | Track stroke width |
+| `trackStrokeWidth` | `number` | `20` | Track stroke width |
 | `trackStrokeColor` | `string` | `'#e6e6e6'` | Track stroke color |
 | `trackStrokeLinecap` | `string` | `'round'` | Track stroke line cap |
 | `trackTransition` | `string` | `'1s ease'` | Track transition |
-| `pointerRadius` | `number` | `5` | Pointer radius |
-| `pointerStrokeWidth` | `number` | `22` | Pointer stroke width |
+| `pointerRadius` | `number` | `0` | Pointer radius |
+| `pointerStrokeWidth` | `number` | `20` | Pointer stroke width |
 | `pointerStrokeColor` | `string` | `'indianred'` | Pointer stroke color |
 | `pointerFillColor` | `string` | `'white'` | Pointer fill color |
 | `initialAnimation` | `bool` | `false` | Initial animation |
