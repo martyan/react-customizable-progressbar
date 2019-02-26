@@ -6,6 +6,7 @@
         "dist"
     ],
     "scripts": {
+        "format": "prettier --write src/**/*.{js,jsx}",
         "dev": "webpack-dev-server --content-base src --inline --config webpack.config.dev.js",
         "prod": "node ./node_modules/webpack/bin/webpack.js -p --progress --config ./webpack.config.prod.js"
     },
@@ -48,6 +49,7 @@
         "node-sass": "^4.9.3",
         "postcss-loader": "^3.0.0",
         "postcss-scss": "^2.0.0",
+        "prettier": "^1.16.4",
         "prismjs": "^1.15.0",
         "prop-types": "^15.6.2",
         "react": "^16.5.2",
