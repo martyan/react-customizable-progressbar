@@ -77,7 +77,7 @@ module.exports = [
             path: DIST_PATH,
             filename: '[name].js',
             library: '[name]',
-            libraryTarget: 'umd'
+            libraryTarget: 'umd',
             publicPath: '/'
         },
         module: {
