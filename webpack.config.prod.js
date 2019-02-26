@@ -70,14 +70,14 @@ module.exports = [
         context: EXAMPLES_PATH,
         devtool: false,
         entry: {
-            Examples: './examples',
-            Generator: './generator'
+            Examples: './Examples/Examples.js',
+            Generator: './Generator/Generator.js'
         },
         output: {
             path: DIST_PATH,
             filename: '[name].js',
             library: '[name]',
-            libraryTarget: 'var',
+            libraryTarget: 'umd'
             publicPath: '/'
         },
         module: {
@@ -110,23 +110,6 @@ module.exports = [
             }),
             new CleanWebpackPlugin(DIST_PATH),
             new webpack.optimize.OccurrenceOrderPlugin()
-        ],
-        optimization: {
-            minimizer: [
-                new UglifyJsPlugin({
-                    uglifyOptions: {
-                        mangle: false,
-                        sourcemap: false,
-                        compress: {
-                            warnings: false,
-                        },
-                        output: {
-                            comments: false,
-                            beautify: false
-                        }
-                    }
-                }),
-            ]
-        }
+        ]
     }
 ];
