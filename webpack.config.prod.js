@@ -110,6 +110,23 @@ module.exports = [
             }),
             new CleanWebpackPlugin(DIST_PATH),
             new webpack.optimize.OccurrenceOrderPlugin()
-        ]
+        ],
+        optimization: {
+            minimizer: [
+                new UglifyJsPlugin({
+                    uglifyOptions: {
+                        mangle: false,
+                        sourcemap: false,
+                        compress: {
+                            warnings: false,
+                        },
+                        output: {
+                            comments: false,
+                            beautify: false
+                        }
+                    }
+                }),
+            ]
+        }
     }
 ];
