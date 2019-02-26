@@ -1,14 +1,14 @@
 .controls {
 
-	flex-basis: 320px;		
+	flex-basis: 320px;
 	background-color: white;
 	border-radius: 5px;
 	margin: 20px;
 
-	input[type=number]::-webkit-inner-spin-button, 
-	input[type=number]::-webkit-outer-spin-button { 
-	  -webkit-appearance: none; 
-	  margin: 0; 
+	input[type=number]::-webkit-inner-spin-button,
+	input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
 	}
 
 	.title {
@@ -37,7 +37,7 @@
 		}
 
 		.caption {
-			
+
 			flex-basis: 100px;
 			font-size: .85em;
 			font-weight: 100;
@@ -58,7 +58,7 @@
 		}
 
 		input {
-	
+
 			width: 90px;
 			padding: 6px 0;
 			text-align: center;

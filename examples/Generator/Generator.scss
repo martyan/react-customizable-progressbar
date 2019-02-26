@@ -19,7 +19,7 @@
 		border-radius: 5px;
 		cursor: pointer;
 		transition: .2s ease;
-	
+
 		&:hover {
 			transform: scale(1.05);
 		}
@@ -28,17 +28,17 @@
 
 	.bar-controls {
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
 
 		.bar {
 
 			flex-basis: 320px;
-	    background-color: white;
-	    border-radius: 5px;
-	    margin: 20px;
+            background-color: white;
+            border-radius: 5px;
+            margin: 20px;
 
 			@media (min-width: 640px) {
 				margin-right: 30px;
@@ -47,7 +47,7 @@
 			.progressbar {
 				margin: 0 auto 20px;
 			}
-			
+
 		}
 
 	}

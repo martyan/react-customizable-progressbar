@@ -1,6 +1,6 @@
 .implementation-code {
 
-	flex-basis: 320px;		
+	flex-basis: 320px;
 	font-size: .8em;
 	padding: 5px;
 	border-radius: 10px;
@@ -14,26 +14,24 @@
 		text-align: right;
 
 		button {
-			
-	    margin-bottom: 20px;
-	    font-size: 1.2em;
-			text-transform: uppercase;
-	    background: transparent;
-	    border: none;
-	    color: #bbb;
-	    transition: .2s ease;
-	    cursor: pointer;
 
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            background: transparent;
+            border: none;
+            color: #bbb;
+            transition: .2s ease;
+            cursor: pointer;
 
+            &:hover {
+                color: #999;
+                background: #f5f5f5;
+            }
 
-	    &:hover {
-	    	color: #999;
-	    	background: #f5f5f5;
-	    }
-
-	    &:focus {
-	    	outline: 0;
-	    }
+            &:focus {
+                outline: 0;
+            }
 
 		}
 

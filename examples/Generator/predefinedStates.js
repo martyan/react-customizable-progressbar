@@ -1,6 +1,3 @@
-// #FF6B6B
-// #C44D58
-
 export const defaultState = {
     radius: 100,
     progress: 66,
