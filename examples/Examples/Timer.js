@@ -2,45 +2,45 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class Timer extends Component {
-  state = {
-    elapsed: 0
-  }
-  
-  componentDidMount = () => {
-    this.start()
-  }
+    state = {
+        elapsed: 0,
+    }
 
-  componentWillUnmount = () => {
-    this.clear()
-  }
+    componentDidMount = () => {
+        this.start()
+    }
 
-  start = () => {
-    if(this.interval) clearInterval(this.interval)
+    componentWillUnmount = () => {
+        this.clear()
+    }
 
-    this.interval = setInterval(() => {
-      const { initialSeconds, totalSeconds } = this.props
-      if((this.state.elapsed + initialSeconds) === totalSeconds) {
-        if(this.interval) clearInterval(this.interval)
-        return
-      }
-      const elapsed = this.state.elapsed + 1
-      this.setState({elapsed})
-      if(this.props.onChange) this.props.onChange(elapsed)
-    }, this.props.interval);
-  }
+    start = () => {
+        if (this.interval) clearInterval(this.interval)
 
-  clear = () => {
-    if(this.interval) clearInterval(this.interval)
-  }
+        this.interval = setInterval(() => {
+            const { initialSeconds, totalSeconds } = this.props
+            if (this.state.elapsed + initialSeconds === totalSeconds) {
+                if (this.interval) clearInterval(this.interval)
+                return
+            }
+            const elapsed = this.state.elapsed + 1
+            this.setState({ elapsed })
+            if (this.props.onChange) this.props.onChange(elapsed)
+        }, this.props.interval)
+    }
 
-  render = () => null
+    clear = () => {
+        if (this.interval) clearInterval(this.interval)
+    }
+
+    render = () => null
 }
 
 Timer.propTypes = {
-  initialSeconds: PropTypes.number.isRequired,
-  totalSeconds: PropTypes.number.isRequired,
-  onChange: PropTypes.func,
-  interval: PropTypes.number.isRequired
+    initialSeconds: PropTypes.number.isRequired,
+    totalSeconds: PropTypes.number.isRequired,
+    onChange: PropTypes.func,
+    interval: PropTypes.number.isRequired,
 }
 
 export default Timer
