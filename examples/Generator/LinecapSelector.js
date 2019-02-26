@@ -64,7 +64,7 @@ const LinecapSelector = ({ onChange, value }) => (
 
 LinecapSelector.propTypes = {
     onChange: PropTypes.func.isRequired,
-    value: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired
 }
 
 export default LinecapSelector

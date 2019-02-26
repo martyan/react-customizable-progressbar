@@ -85,7 +85,7 @@ class ImplementationCode extends Component {
 
 ImplementationCode.propTypes = {
     codeVisible: PropTypes.bool.isRequired,
-    toggleCode: PropTypes.func.isRequired,
+    toggleCode: PropTypes.func.isRequired
 }
 
 export default ImplementationCode

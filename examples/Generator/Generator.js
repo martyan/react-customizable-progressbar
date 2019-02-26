@@ -8,7 +8,7 @@ import {
     example2State,
     example3State,
     example4State,
-    example5State,
+    example5State
 } from './predefinedStates'
 import './Generator.scss'
 
@@ -27,7 +27,7 @@ const Indicator = props => {
                 margin: '0 auto',
                 color: 'black',
                 fontSize: '1.3em',
-                ...props.style,
+                ...props.style
             }}
         >
             <div style={{ fontSize: '1.3em' }}>
@@ -40,7 +40,7 @@ const Indicator = props => {
 class Generator extends React.Component {
     state = {
         ...defaultState,
-        codeVisible: false,
+        codeVisible: false
     }
 
     handleChange = (key, value) => {
@@ -71,7 +71,7 @@ class Generator extends React.Component {
                     style={{
                         fontSize: '.7em',
                         color: '#aaa',
-                        fontWeight: '100',
+                        fontWeight: '100'
                     }}
                 />
             </ProgressBar>
@@ -84,7 +84,7 @@ class Generator extends React.Component {
         const handlers = {
             handleChange: this.handleChange,
             handleNumberChange: this.handleNumberChange,
-            handleCheckboxChange: this.handleCheckboxChange,
+            handleCheckboxChange: this.handleCheckboxChange
         }
 
         return (

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 class ReactCustomizableProgressbar extends Component {
     state = {
-        animationInited: false,
+        animationInited: false
     }
 
     componentDidMount = () => {
@@ -60,7 +60,7 @@ class ReactCustomizableProgressbar extends Component {
             strokeWidth,
             pointerRadius,
             pointerStrokeWidth,
-            trackStrokeWidth,
+            trackStrokeWidth
         } = this.props
         const pointerWidth = pointerRadius + pointerStrokeWidth
 
@@ -98,7 +98,7 @@ class ReactCustomizableProgressbar extends Component {
             children,
             trackTransition,
             transition,
-            className,
+            className
         } = this.props
 
         const d = 2 * radius
@@ -116,7 +116,7 @@ class ReactCustomizableProgressbar extends Component {
                 }
                 style={{
                     position: 'relative',
-                    width: `${width}px`,
+                    width: `${width}px`
                 }}
             >
                 <svg
@@ -175,7 +175,7 @@ class ReactCustomizableProgressbar extends Component {
                                 transformOrigin: '50% 50%',
                                 transform: `rotate(${this.getPointerAngle()}deg) translate(${this.getExtendedWidth() /
                                     2}px)`,
-                                transition,
+                                transition
                             }}
                         />
                     )}
@@ -216,7 +216,7 @@ ReactCustomizableProgressbar.propTypes = {
     counterClockwise: PropTypes.bool,
 
     children: PropTypes.element,
-    className: PropTypes.string,
+    className: PropTypes.string
 }
 
 ReactCustomizableProgressbar.defaultProps = {
@@ -247,7 +247,7 @@ ReactCustomizableProgressbar.defaultProps = {
 
     initialAnimation: false,
     initialAnimationDelay: 0,
-    className: null,
+    className: null
 }
 
 export default ReactCustomizableProgressbar

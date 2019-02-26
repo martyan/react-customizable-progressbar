@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 class Timer extends Component {
     state = {
-        elapsed: 0,
+        elapsed: 0
     }
 
     componentDidMount = () => {
@@ -40,7 +40,7 @@ Timer.propTypes = {
     initialSeconds: PropTypes.number.isRequired,
     totalSeconds: PropTypes.number.isRequired,
     onChange: PropTypes.func,
-    interval: PropTypes.number.isRequired,
+    interval: PropTypes.number.isRequired
 }
 
 export default Timer

@@ -10,7 +10,7 @@ import './Examples.scss'
 
 class Examples extends Component {
     state = {
-        progress: 64,
+        progress: 64
     }
 
     render = () => {
@@ -25,7 +25,7 @@ class Examples extends Component {
                         value={progress}
                         onChange={e =>
                             this.setState({
-                                progress: parseInt(e.target.value, 10),
+                                progress: parseInt(e.target.value, 10)
                             })
                         }
                         min={0}

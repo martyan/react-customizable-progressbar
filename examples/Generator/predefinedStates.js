@@ -24,7 +24,7 @@ export const defaultState = {
     inverse: false,
     initialAnimation: false,
     initialAnimationDelay: 0,
-    className: null,
+    className: null
 }
 
 export const example1State = {
@@ -32,7 +32,7 @@ export const example1State = {
     strokeWidth: 18,
     strokeColor: '#5d9cec',
     strokeLinecap: 'square',
-    trackStrokeWidth: 18,
+    trackStrokeWidth: 18
 }
 
 export const example2State = {
@@ -41,7 +41,7 @@ export const example2State = {
     strokeColor: '#a0d468',
     strokeLinecap: 'round',
     trackStrokeWidth: 18,
-    counterClockwise: true,
+    counterClockwise: true
 }
 
 export const example3State = {
@@ -52,7 +52,7 @@ export const example3State = {
     trackStrokeWidth: 14,
     trackStrokeLinecap: 'butt',
     cut: 120,
-    rotate: -210,
+    rotate: -210
 }
 
 export const example4State = {
@@ -62,7 +62,7 @@ export const example4State = {
     trackStrokeWidth: 4,
     pointerRadius: 8,
     pointerStrokeWidth: 5,
-    pointerStrokeColor: 'indianred',
+    pointerStrokeColor: 'indianred'
 }
 
 export const example5State = {
@@ -74,5 +74,5 @@ export const example5State = {
     pointerRadius: 12,
     pointerStrokeWidth: 2,
     pointerStrokeColor: '#656d78',
-    inverse: true,
+    inverse: true
 }

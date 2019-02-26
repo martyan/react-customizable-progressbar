@@ -40,7 +40,7 @@ const Indicator = props => {
 class Countdown extends Component {
     state = {
         elapsedSeconds: 0,
-        progress: initialProgress,
+        progress: initialProgress
     }
 
     handleTimer = elapsedSeconds => {
@@ -49,7 +49,7 @@ class Countdown extends Component {
         )
         this.setState({
             progress,
-            elapsedSeconds,
+            elapsedSeconds
         })
     }
 

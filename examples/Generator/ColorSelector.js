@@ -6,7 +6,7 @@ import './ColorSelector.scss'
 
 class ColorSelector extends Component {
     state = {
-        pickerVisible: false,
+        pickerVisible: false
     }
 
     componentDidMount = () => {
@@ -47,7 +47,7 @@ class ColorSelector extends Component {
 
 ColorSelector.propTypes = {
     onChange: PropTypes.func.isRequired,
-    value: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired
 }
 
 export default ColorSelector

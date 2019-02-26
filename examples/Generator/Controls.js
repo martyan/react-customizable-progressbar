@@ -10,20 +10,20 @@ export const mainGroup = [
         label: 'Radius',
         type: 'number',
         min: 0,
-        unit: 'px',
+        unit: 'px'
     },
     {
         name: 'progress',
         label: 'Progress',
         type: 'number',
         min: 0,
-        max: 'steps',
+        max: 'steps'
     },
     {
         name: 'steps',
         label: 'Steps',
         type: 'number',
-        min: 'progress',
+        min: 'progress'
     },
     {
         name: 'cut',
@@ -31,41 +31,41 @@ export const mainGroup = [
         type: 'number',
         min: 0,
         max: 360,
-        unit: 'deg',
+        unit: 'deg'
     },
     {
         name: 'rotate',
         label: 'Rotate',
         type: 'number',
-        unit: 'deg',
+        unit: 'deg'
     },
     {
         name: 'fillColor',
         label: 'Fill color',
-        type: 'color',
+        type: 'color'
     },
     {
         name: 'counterClockwise',
         label: 'Counter-clockwise',
-        type: 'checkbox',
+        type: 'checkbox'
     },
     {
         name: 'inverse',
         label: 'Inverse',
-        type: 'checkbox',
+        type: 'checkbox'
     },
     {
         name: 'initialAnimation',
         label: 'Initial animation',
-        type: 'checkbox',
+        type: 'checkbox'
     },
     {
         name: 'initialAnimationDelay',
         label: 'Initial animation delay',
         type: 'number',
         min: 0,
-        unit: 'ms',
-    },
+        unit: 'ms'
+    }
 ]
 
 export const progressGroup = [
@@ -74,26 +74,26 @@ export const progressGroup = [
         label: 'Stroke width',
         type: 'number',
         min: 0,
-        unit: 'px',
+        unit: 'px'
     },
     {
         name: 'strokeColor',
         label: 'Stroke color',
         type: 'color',
-        condition: props => props.strokeWidth > 0,
+        condition: props => props.strokeWidth > 0
     },
     {
         name: 'transition',
         label: 'Stroke transition',
         type: 'text',
-        condition: props => props.strokeWidth > 0,
+        condition: props => props.strokeWidth > 0
     },
     {
         name: 'strokeLinecap',
         label: 'Stroke linecap',
         type: 'linecap',
-        condition: props => props.strokeWidth > 0,
-    },
+        condition: props => props.strokeWidth > 0
+    }
 ]
 
 export const trackGroup = [
@@ -102,26 +102,26 @@ export const trackGroup = [
         label: 'Stroke width',
         type: 'number',
         min: 0,
-        unit: 'px',
+        unit: 'px'
     },
     {
         name: 'trackStrokeColor',
         label: 'Stroke color',
         type: 'color',
-        condition: props => props.trackStrokeWidth > 0,
+        condition: props => props.trackStrokeWidth > 0
     },
     {
         name: 'trackTransition',
         label: 'Stroke transition',
         type: 'text',
-        condition: props => props.trackStrokeWidth > 0,
+        condition: props => props.trackStrokeWidth > 0
     },
     {
         name: 'trackStrokeLinecap',
         label: 'Stroke linecap',
         type: 'linecap',
-        condition: props => props.trackStrokeWidth > 0 && props.cut > 0,
-    },
+        condition: props => props.trackStrokeWidth > 0 && props.cut > 0
+    }
 ]
 
 export const pointerGroup = [
@@ -130,7 +130,7 @@ export const pointerGroup = [
         label: 'Radius',
         type: 'number',
         min: 0,
-        unit: 'px',
+        unit: 'px'
     },
     {
         name: 'pointerStrokeWidth',
@@ -138,29 +138,29 @@ export const pointerGroup = [
         type: 'number',
         min: 0,
         unit: 'px',
-        condition: props => props.pointerRadius > 0,
+        condition: props => props.pointerRadius > 0
     },
     {
         name: 'pointerStrokeColor',
         label: 'Stroke color',
         type: 'color',
         condition: props =>
-            props.pointerRadius > 0 && props.pointerStrokeWidth > 0,
+            props.pointerRadius > 0 && props.pointerStrokeWidth > 0
     },
     {
         name: 'pointerFillColor',
         label: 'Fill color',
         type: 'color',
         condition: props =>
-            props.pointerRadius > 0 && props.pointerStrokeWidth > 0,
-    },
+            props.pointerRadius > 0 && props.pointerStrokeWidth > 0
+    }
 ]
 
 const groups = {
     main: mainGroup,
     progress: progressGroup,
     track: trackGroup,
-    pointer: pointerGroup,
+    pointer: pointerGroup
 }
 
 const getChangeFn = (input, props) => {
@@ -303,7 +303,7 @@ Controls.propTypes = {
     handleNumberChange: PropTypes.func.isRequired,
     handleCheckboxChange: PropTypes.func.isRequired,
     defaultState: PropTypes.object.isRequired,
-    type: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired
 }
 
 export default Controls
