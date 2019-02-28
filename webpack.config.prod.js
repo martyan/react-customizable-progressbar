@@ -4,7 +4,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 
 const SRC_PATH = path.resolve(__dirname, 'src');
-const EXAMPLES_PATH = path.resolve(__dirname, 'examples');
 const DIST_PATH = path.resolve(__dirname, 'dist');
 
 module.exports = [
