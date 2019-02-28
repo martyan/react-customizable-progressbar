@@ -1,5 +1,5 @@
 import React from 'react'
-import ProgressBar from '../../src/ReactCustomizableProgressbar'
+import ProgressBar from '../src/ReactCustomizableProgressbar'
 
 const CounterClockwise = ({ progress }) => (
     <div className="item">

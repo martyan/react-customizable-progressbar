@@ -1,5 +1,5 @@
 import React from 'react'
-import ProgressBar from '../../src/ReactCustomizableProgressbar'
+import ProgressBar from '../src/ReactCustomizableProgressbar'
 
 const Cut = ({ progress }) => (
     <div className="item">

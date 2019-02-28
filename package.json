@@ -1,9 +1,10 @@
 {
     "name": "react-customizable-progressbar",
-    "version": "0.1.11",
+    "version": "0.1.14",
     "main": "./dist/ReactCustomizableProgressbar.js",
     "files": [
-        "dist"
+        "dist",
+        "examples"
     ],
     "scripts": {
         "format": "prettier --write {src,examples}/**/*.{js,jsx}",
@@ -50,14 +51,10 @@
         "postcss-loader": "^3.0.0",
         "postcss-scss": "^2.0.0",
         "prettier": "^1.16.4",
-        "prismjs": "^1.15.0",
         "prop-types": "^15.6.2",
         "react": "^16.5.2",
-        "react-color": "^2.14.1",
         "react-dom": "^16.5.2",
         "react-hot-loader": "^3.0.0-beta.7",
-        "react-prism": "^4.3.2",
-        "rxjs": "^5.3.0",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.0",
         "uglifyjs-webpack-plugin": "^2.0.1",

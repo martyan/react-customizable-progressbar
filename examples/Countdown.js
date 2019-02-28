@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import moment from 'moment'
-import ProgressBar from '../../src/ReactCustomizableProgressbar'
+import ProgressBar from '../src/ReactCustomizableProgressbar'
 import Timer from './Timer'
 import './Countdown.scss'
 
