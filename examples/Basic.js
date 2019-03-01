@@ -6,7 +6,7 @@ const Basic = ({ progress }) => (
         <div className="title">
             <span>Basic</span>
             <a
-                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Examples/Basic.js"
+                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Basic.js"
                 target="_blank"
             >
                 code <i className="fa fa-external-link-square" />

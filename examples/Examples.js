@@ -9,6 +9,7 @@ import Countdown from './Countdown'
 import './Examples.scss'
 
 class Examples extends Component {
+
     state = {
         progress: 64
     }
@@ -45,6 +46,7 @@ class Examples extends Component {
             </div>
         )
     }
+
 }
 
 export default Examples

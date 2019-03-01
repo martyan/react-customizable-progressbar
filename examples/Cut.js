@@ -6,7 +6,7 @@ const Cut = ({ progress }) => (
         <div className="title">
             <span>Cut</span>
             <a
-                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Examples/Cut.js"
+                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Cut.js"
                 target="_blank"
             >
                 code <i className="fa fa-external-link-square" />

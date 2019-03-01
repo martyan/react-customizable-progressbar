@@ -6,7 +6,7 @@ const CounterClockwise = ({ progress }) => (
         <div className="title">
             <span>Counter-clockwise</span>
             <a
-                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Examples/CounterClockwise.js"
+                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/CounterClockwise.js"
                 target="_blank"
             >
                 code <i className="fa fa-external-link-square" />

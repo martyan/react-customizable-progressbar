@@ -66,7 +66,7 @@ class Countdown extends Component {
                 <div className="title">
                     <span>Countdown</span>
                     <a
-                        href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Examples/Countdown.js"
+                        href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Countdown.js"
                         target="_blank"
                     >
                         code <i className="fa fa-external-link-square" />
