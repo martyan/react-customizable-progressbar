@@ -1,11 +1,8 @@
 {
     "name": "react-customizable-progressbar",
-    "version": "0.1.20",
+    "version": "0.1.22",
     "main": "./dist/ReactCustomizableProgressbar.js",
-    "files": [
-        "dist",
-        "examples"
-    ],
+    "files": ["dist"],
     "scripts": {
         "format": "prettier --write {src,examples}/**/*.{js,jsx}",
         "dev": "webpack-dev-server --content-base src --inline --config webpack.config.dev.js",
@@ -26,7 +23,7 @@
         "svg",
         "animation"
     ],
-    "homepage": "http://martinjuzl.com/react-customizable-progressbar-generator.html",
+    "homepage": "https://martinjuzl.com/react-customizable-progressbar",
     "author": "Martin Juzl",
     "license": "MIT",
     "devDependencies": {
