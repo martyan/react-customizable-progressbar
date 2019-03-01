@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class ReactCustomizableProgressbar extends Component {
+
     state = {
         animationInited: false
     }
@@ -64,8 +65,7 @@ class ReactCustomizableProgressbar extends Component {
         } = this.props
         const pointerWidth = pointerRadius + pointerStrokeWidth
 
-        if (pointerWidth > strokeWidth && pointerWidth > trackStrokeWidth)
-            return pointerWidth * 2
+        if (pointerWidth > strokeWidth && pointerWidth > trackStrokeWidth) return pointerWidth * 2
         else if (strokeWidth > trackStrokeWidth) return strokeWidth * 2
         else return trackStrokeWidth * 2
     }
@@ -184,6 +184,7 @@ class ReactCustomizableProgressbar extends Component {
             </div>
         )
     }
+
 }
 
 ReactCustomizableProgressbar.propTypes = {
