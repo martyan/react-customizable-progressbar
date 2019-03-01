@@ -4,11 +4,11 @@ Customizable circular SVG progress bar component for React
 
 <br />
 <p align="center">
-    <img src="http://martinjuzl.com/files/react-customizable-progressbar.gif?v=2">
+    <img src="https://camo.githubusercontent.com/94b8210b015f99ecdfd206cc5789772e13e0e16c/687474703a2f2f6d617274696e6a757a6c2e636f6d2f66696c65732f72656163742d637573746f6d697a61626c652d70726f67726573736261722e6769663f763d32">
 </p>
 <br />
 
-Check <a href="http://martinjuzl.com/react-customizable-progressbar-examples.html">examples</a> or <a href="http://martinjuzl.com/react-customizable-progressbar-generator.html">generator</a> to play around with all props
+Check <a href="https://martinjuzl.com/react-customizable-progressbar">examples</a> or <a href="https://martinjuzl.com/react-customizable-progressbar/generator">generator</a> to play around with all props
 
 ### Installation
 
