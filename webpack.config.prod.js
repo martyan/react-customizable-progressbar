@@ -17,7 +17,8 @@ module.exports = [
             path: DIST_PATH,
             filename: 'ReactCustomizableProgressbar.js',
             library: 'ReactCustomizableProgressbar',
-            libraryTarget: 'umd'
+            libraryTarget: 'umd',
+            globalObject: 'this'
         },
         module: {
             rules: [
