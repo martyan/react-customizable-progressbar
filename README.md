@@ -72,7 +72,7 @@ import Bar from 'react-customizable-progressbar'
 .progress-bar-pointer {}
 ```
 
-### Development
+### Run examples locally
 
 ```bash
 npm install
