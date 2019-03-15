@@ -14,6 +14,11 @@ module.exports = {
         historyApiFallback: true,
         hot: true
     },
+    resolve: {
+        alias: {
+            'react-customizable-progressbar': SRC_PATH + '/ReactCustomizableProgressbar'
+        }
+    },
     module: {
         rules: [
             {

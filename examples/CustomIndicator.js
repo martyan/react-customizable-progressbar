@@ -1,5 +1,5 @@
 import React from 'react'
-import ProgressBar from '../src/ReactCustomizableProgressbar'
+import ProgressBar from 'react-customizable-progressbar'
 
 const CustomIndicator = ({ progress }) => (
     <div className="item">
