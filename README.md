@@ -72,7 +72,7 @@ import ProgressBar from 'react-customizable-progressbar'
 .RCP__pointer {}
 ```
 
-You can use these default indicator styles to center it both horizontally and vertically
+You can use these default indicator styles to center it both horizontally and vertically:
 ```css
 .your-indicator {
     display: flex;
