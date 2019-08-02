@@ -56,11 +56,11 @@ import ProgressBar from 'react-customizable-progressbar'
 | `pointerStrokeColor` | `string` | `'indianred'` | Pointer stroke color |
 | `pointerFillColor` | `string` | `'white'` | Pointer fill color |
 | `initialAnimation` | `bool` | `false` | Initial animation |
-| `initialAnimationDelay` | `number` | `500` | Initial animation delay |
+| `initialAnimationDelay` | `number` | `0` | Initial animation delay |
 | `inverse` | `bool` | `false` | Inverse |
 | `counterClockwise` | `bool` | `false` | Counter-clockwise |
 | `children` | `node` | `null` | Children - pass anything to show inside progress bar |
-| `className` | `string` | `''` | Progress bar class name |
+| `className` | `string` | `null` | Progress bar class name |
 
 
 ### Styles
