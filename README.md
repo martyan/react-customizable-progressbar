@@ -25,9 +25,9 @@ yarn add react-customizable-progressbar
 ### Usage
 
 ```jsx
-import Bar from 'react-customizable-progressbar'
+import ProgressBar from 'react-customizable-progressbar'
 
-<Bar
+<ProgressBar
     progress={60}
     radius={100}
 />
@@ -66,10 +66,23 @@ import Bar from 'react-customizable-progressbar'
 ### Styles
 
 ```css
-.progress-bar {}
-.progress-bar-track {}
-.progress-bar-progress {}
-.progress-bar-pointer {}
+.RCP {}
+.RCP__track {}
+.RCP__progress {}
+.RCP__pointer {}
+```
+
+You can use these default indicator styles to center it both horizontally and vertically
+```css
+display: flex;
+justify-content: center;
+text-align: center;
+position: absolute;
+top: 0;
+width: 100%;
+height: 100%;
+margin: 0 auto;
+user-select: none;
 ```
 
 ### Run examples locally
