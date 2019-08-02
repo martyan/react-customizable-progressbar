@@ -7,7 +7,7 @@ class ReactCustomizableProgressbar extends Component {
         animationInited: false
     }
 
-    componentDidMount = () => {
+    componentDidMount() {
         const { initialAnimation, initialAnimationDelay } = this.props
         if (initialAnimation)
             setTimeout(this.initAnimation, initialAnimationDelay)
@@ -79,7 +79,7 @@ class ReactCustomizableProgressbar extends Component {
             : ((360 - cut) / steps) * progress
     }
 
-    render = () => {
+    render() {
         const {
             radius,
             pointerRadius,
@@ -111,8 +111,8 @@ class ReactCustomizableProgressbar extends Component {
             <div
                 className={
                     className
-                        ? `progress-ReactCustomizableProgressbar ${className}`
-                        : 'progress-ReactCustomizableProgressbar'
+                        ? `RCP ${className}`
+                        : 'RCP'
                 }
                 style={{
                     position: 'relative',
@@ -138,7 +138,7 @@ class ReactCustomizableProgressbar extends Component {
                                 circumference
                             )}
                             strokeLinecap={trackStrokeLinecap}
-                            className="progress-ReactCustomizableProgressbar-track"
+                            className="RCP__track"
                             style={{ transition: trackTransition }}
                         />
                     )}
@@ -158,7 +158,7 @@ class ReactCustomizableProgressbar extends Component {
                                 strokeLength
                             )}
                             strokeLinecap={strokeLinecap}
-                            className="progress-ReactCustomizableProgressbar-progress"
+                            className="RCP__progress"
                             style={{ transition }}
                         />
                     )}
@@ -170,7 +170,7 @@ class ReactCustomizableProgressbar extends Component {
                             fill={pointerFillColor}
                             stroke={pointerStrokeColor}
                             strokeWidth={pointerStrokeWidth}
-                            className="progress-ReactCustomizableProgressbar-progress-pointer"
+                            className="RCP__pointer"
                             style={{
                                 transformOrigin: '50% 50%',
                                 transform: `rotate(${this.getPointerAngle()}deg) translate(${this.getExtendedWidth() /
