@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 
@@ -47,21 +47,8 @@ module.exports = [
             new webpack.optimize.OccurrenceOrderPlugin()
         ],
         optimization: {
-            minimizer: [
-                new UglifyJsPlugin({
-                    uglifyOptions: {
-                        mangle: false,
-                        sourcemap: false,
-                        compress: {
-                            warnings: false,
-                        },
-                        output: {
-                            comments: false,
-                            beautify: false
-                        }
-                    }
-                }),
-            ]
+            minimize: true,
+            minimizer: [new TerserPlugin()]
         }
     }
 ];
