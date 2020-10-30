@@ -1,189 +1,174 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
-class ReactCustomizableProgressbar extends Component {
+const ReactCustomizableProgressbar = ({
+    radius,
+    progress,
+    steps,
+    cut,
+    rotate,
+    strokeWidth,
+    strokeColor,
+    fillColor,
+    strokeLinecap,
+    transition,
+    pointerRadius,
+    pointerStrokeWidth,
+    pointerStrokeColor,
+    pointerFillColor,
+    trackStrokeColor,
+    trackStrokeWidth,
+    trackStrokeLinecap,
+    trackTransition,
+    counterClockwise,
+    inverse,
+    initialAnimation,
+    initialAnimationDelay,
+    className,
+    children
+}) => {
 
-    state = {
-        animationInited: false
-    }
+    const [ animationInited, setAnimationInited ] = useState(false)
 
-    componentDidMount() {
-        const { initialAnimation, initialAnimationDelay } = this.props
-        if (initialAnimation)
-            setTimeout(this.initAnimation, initialAnimationDelay)
-    }
+    useEffect(() => {
+        if(initialAnimation) {
+            setTimeout(() => setAnimationInited(true), initialAnimationDelay)
+        }
+    }, [])
 
-    initAnimation = () => {
-        this.setState({ animationInited: true })
-    }
+    const getProgress = () => initialAnimation && !animationInited ? 0 : progress
 
-    getProgress = () => {
-        const { initialAnimation, progress } = this.props
-        const { animationInited } = this.state
-
-        return initialAnimation && !animationInited ? 0 : progress
-    }
-
-    getStrokeDashoffset = strokeLength => {
-        const { counterClockwise, inverse, steps } = this.props
-
-        const progress = this.getProgress()
+    const getStrokeDashoffset = (strokeLength) => {
+        const progress = getProgress()
         const progressLength = (strokeLength / steps) * (steps - progress)
 
-        if (inverse) return counterClockwise ? 0 : progressLength - strokeLength
+        if(inverse) {
+            return counterClockwise ? 0 : progressLength - strokeLength
+        }
 
         return counterClockwise ? -1 * progressLength : progressLength
     }
 
-    getStrokeDashArray = (strokeLength, circumference) => {
-        const { counterClockwise, inverse, steps } = this.props
-
-        const progress = this.getProgress()
+    const getStrokeDashArray = (strokeLength, circumference) => {
+        const progress = getProgress()
         const progressLength = (strokeLength / steps) * (steps - progress)
 
-        if (inverse) return `${progressLength}, ${circumference}`
+        if(inverse) {
+            return `${progressLength}, ${circumference}`
+        }
 
         return counterClockwise
             ? `${strokeLength * (progress / 100)}, ${circumference}`
             : `${strokeLength}, ${circumference}`
     }
 
-    getTrackStrokeDashArray = (strokeLength, circumference) => {
-        const { initialAnimation } = this.props
-        const { animationInited } = this.state
+    const getTrackStrokeDashArray = (strokeLength, circumference) => {
+        if(initialAnimation && !animationInited) {
+            return `0, ${circumference}`
+        }
 
-        if (initialAnimation && !animationInited) return `0, ${circumference}`
         return `${strokeLength}, ${circumference}`
     }
 
-    getExtendedWidth = () => {
-        const {
-            strokeWidth,
-            pointerRadius,
-            pointerStrokeWidth,
-            trackStrokeWidth
-        } = this.props
+    const getExtendedWidth = () => {
         const pointerWidth = pointerRadius + pointerStrokeWidth
 
-        if (pointerWidth > strokeWidth && pointerWidth > trackStrokeWidth) return pointerWidth * 2
-        else if (strokeWidth > trackStrokeWidth) return strokeWidth * 2
-        else return trackStrokeWidth * 2
+        if(pointerWidth > strokeWidth && pointerWidth > trackStrokeWidth) {
+            return pointerWidth * 2
+        } else if(strokeWidth > trackStrokeWidth) {
+            return strokeWidth * 2
+        }
+
+        return trackStrokeWidth * 2
     }
 
-    getPointerAngle = () => {
-        const { cut, counterClockwise, steps } = this.props
-        const progress = this.getProgress()
+    const getPointerAngle = () => {
+        const progress = getProgress()
 
         return counterClockwise
             ? ((360 - cut) / steps) * (steps - progress)
             : ((360 - cut) / steps) * progress
     }
 
-    render() {
-        const {
-            radius,
-            pointerRadius,
-            pointerStrokeWidth,
-            pointerFillColor,
-            pointerStrokeColor,
-            fillColor,
-            trackStrokeWidth,
-            trackStrokeColor,
-            trackStrokeLinecap,
-            strokeColor,
-            strokeWidth,
-            strokeLinecap,
-            rotate,
-            cut,
-            children,
-            trackTransition,
-            transition,
-            className
-        } = this.props
+    const d = 2 * radius
+    const width = d + getExtendedWidth()
 
-        const d = 2 * radius
-        const width = d + this.getExtendedWidth()
+    const circumference = 2 * Math.PI * radius
+    const strokeLength = (circumference / 360) * (360 - cut)
 
-        const circumference = 2 * Math.PI * radius
-        const strokeLength = (circumference / 360) * (360 - cut)
-
-        return (
-            <div
-                className={
-                    className
-                        ? `RCP ${className}`
-                        : 'RCP'
-                }
-                style={{
-                    position: 'relative',
-                    width: `${width}px`
-                }}
+    return (
+        <div
+            className={className ? `RCP ${className}` : 'RCP'}
+            style={{
+                position: 'relative',
+                width: `${width}px`
+            }}
+        >
+            <svg
+                width={width}
+                height={width}
+                viewBox={`0 0 ${width} ${width}`}
+                style={{transform: `rotate(${rotate}deg)`}}
             >
-                <svg
-                    width={width}
-                    height={width}
-                    viewBox={`0 0 ${width} ${width}`}
-                    style={{ transform: `rotate(${rotate}deg)` }}
-                >
-                    {trackStrokeWidth > 0 && (
-                        <circle
-                            cx={width / 2}
-                            cy={width / 2}
-                            r={radius}
-                            fill="none"
-                            stroke={trackStrokeColor}
-                            strokeWidth={trackStrokeWidth}
-                            strokeDasharray={this.getTrackStrokeDashArray(
-                                strokeLength,
-                                circumference
-                            )}
-                            strokeLinecap={trackStrokeLinecap}
-                            className="RCP__track"
-                            style={{ transition: trackTransition }}
-                        />
-                    )}
-                    {strokeWidth > 0 && (
-                        <circle
-                            cx={width / 2}
-                            cy={width / 2}
-                            r={radius}
-                            fill={fillColor}
-                            stroke={strokeColor}
-                            strokeWidth={strokeWidth}
-                            strokeDasharray={this.getStrokeDashArray(
-                                strokeLength,
-                                circumference
-                            )}
-                            strokeDashoffset={this.getStrokeDashoffset(
-                                strokeLength
-                            )}
-                            strokeLinecap={strokeLinecap}
-                            className="RCP__progress"
-                            style={{ transition }}
-                        />
-                    )}
-                    {pointerRadius > 0 && (
-                        <circle
-                            cx={d}
-                            cy="50%"
-                            r={pointerRadius}
-                            fill={pointerFillColor}
-                            stroke={pointerStrokeColor}
-                            strokeWidth={pointerStrokeWidth}
-                            className="RCP__pointer"
-                            style={{
-                                transformOrigin: '50% 50%',
-                                transform: `rotate(${this.getPointerAngle()}deg) translate(${this.getExtendedWidth() /
-                                    2}px)`,
-                                transition
-                            }}
-                        />
-                    )}
-                </svg>
-                {children || null}
-            </div>
-        )
-    }
+                {trackStrokeWidth > 0 && (
+                    <circle
+                        cx={width / 2}
+                        cy={width / 2}
+                        r={radius}
+                        fill="none"
+                        stroke={trackStrokeColor}
+                        strokeWidth={trackStrokeWidth}
+                        strokeDasharray={getTrackStrokeDashArray(
+                            strokeLength,
+                            circumference
+                        )}
+                        strokeLinecap={trackStrokeLinecap}
+                        className="RCP__track"
+                        style={{ transition: trackTransition }}
+                    />
+                )}
+                {strokeWidth > 0 && (
+                    <circle
+                        cx={width / 2}
+                        cy={width / 2}
+                        r={radius}
+                        fill={fillColor}
+                        stroke={strokeColor}
+                        strokeWidth={strokeWidth}
+                        strokeDasharray={getStrokeDashArray(
+                            strokeLength,
+                            circumference
+                        )}
+                        strokeDashoffset={getStrokeDashoffset(
+                            strokeLength
+                        )}
+                        strokeLinecap={strokeLinecap}
+                        className="RCP__progress"
+                        style={{ transition }}
+                    />
+                )}
+                {pointerRadius > 0 && (
+                    <circle
+                        cx={d}
+                        cy="50%"
+                        r={pointerRadius}
+                        fill={pointerFillColor}
+                        stroke={pointerStrokeColor}
+                        strokeWidth={pointerStrokeWidth}
+                        className="RCP__pointer"
+                        style={{
+                            transformOrigin: '50% 50%',
+                            transform: `rotate(${getPointerAngle()}deg) translate(${getExtendedWidth() /
+                            2}px)`,
+                            transition
+                        }}
+                    />
+                )}
+            </svg>
+
+            {children || null}
+        </div>
+    )
 
 }
 
