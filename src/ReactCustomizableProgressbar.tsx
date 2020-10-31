@@ -1,7 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
+import React, {FunctionComponent, ReactNode, useEffect, useState} from 'react'
 
-const ReactCustomizableProgressbar = ({
+export type ReactCustomizableProgressbarProps = {
+    radius: number,
+    progress: number,
+    steps?: number,
+    cut?: number,
+    rotate?: number,
+    strokeWidth?: number,
+    strokeColor?: string,
+    fillColor?: string,
+    strokeLinecap?: 'round' | 'inherit' | 'butt' | 'square',
+    transition?: string,
+    pointerRadius?: number,
+    pointerStrokeWidth?: number,
+    pointerStrokeColor?: string,
+    pointerFillColor?: string,
+    trackStrokeColor?: string,
+    trackStrokeWidth?: number,
+    trackStrokeLinecap?: 'round' | 'inherit' | 'butt' | 'square',
+    trackTransition?: string,
+    counterClockwise?: boolean,
+    inverse?: boolean,
+    initialAnimation?: boolean,
+    initialAnimationDelay?: number,
+    className?: string,
+    children?: ReactNode
+}
+
+const ReactCustomizableProgressbar: FunctionComponent<ReactCustomizableProgressbarProps> = ({
     radius,
     progress,
     steps,
@@ -38,9 +64,9 @@ const ReactCustomizableProgressbar = ({
 
     const getProgress = () => initialAnimation && !animationInited ? 0 : progress
 
-    const getStrokeDashoffset = (strokeLength) => {
+    const getStrokeDashoffset = (strokeLength: number) => {
         const progress = getProgress()
-        const progressLength = (strokeLength / steps) * (steps - progress)
+        const progressLength = (strokeLength / steps!) * (steps! - progress)
 
         if(inverse) {
             return counterClockwise ? 0 : progressLength - strokeLength
@@ -49,9 +75,9 @@ const ReactCustomizableProgressbar = ({
         return counterClockwise ? -1 * progressLength : progressLength
     }
 
-    const getStrokeDashArray = (strokeLength, circumference) => {
+    const getStrokeDashArray = (strokeLength: number, circumference: number) => {
         const progress = getProgress()
-        const progressLength = (strokeLength / steps) * (steps - progress)
+        const progressLength = (strokeLength / steps!) * (steps! - progress)
 
         if(inverse) {
             return `${progressLength}, ${circumference}`
@@ -62,7 +88,7 @@ const ReactCustomizableProgressbar = ({
             : `${strokeLength}, ${circumference}`
     }
 
-    const getTrackStrokeDashArray = (strokeLength, circumference) => {
+    const getTrackStrokeDashArray = (strokeLength: number, circumference: number) => {
         if(initialAnimation && !animationInited) {
             return `0, ${circumference}`
         }
@@ -71,34 +97,34 @@ const ReactCustomizableProgressbar = ({
     }
 
     const getExtendedWidth = () => {
-        const pointerWidth = pointerRadius + pointerStrokeWidth
+        const pointerWidth = pointerRadius! + pointerStrokeWidth!
 
-        if(pointerWidth > strokeWidth && pointerWidth > trackStrokeWidth) {
+        if(pointerWidth > strokeWidth! && pointerWidth > trackStrokeWidth!) {
             return pointerWidth * 2
-        } else if(strokeWidth > trackStrokeWidth) {
-            return strokeWidth * 2
+        } else if(strokeWidth! > trackStrokeWidth!) {
+            return strokeWidth! * 2
         }
 
-        return trackStrokeWidth * 2
+        return trackStrokeWidth! * 2
     }
 
     const getPointerAngle = () => {
         const progress = getProgress()
 
         return counterClockwise
-            ? ((360 - cut) / steps) * (steps - progress)
-            : ((360 - cut) / steps) * progress
+            ? ((360 - cut!) / steps!) * (steps! - progress)
+            : ((360 - cut!) / steps!) * progress
     }
 
     const d = 2 * radius
     const width = d + getExtendedWidth()
 
     const circumference = 2 * Math.PI * radius
-    const strokeLength = (circumference / 360) * (360 - cut)
+    const strokeLength = (circumference / 360) * (360 - cut!)
 
     return (
         <div
-            className={className ? `RCP ${className}` : 'RCP'}
+            className={`RCP ${className}`}
             style={{
                 position: 'relative',
                 width: `${width}px`
@@ -110,7 +136,7 @@ const ReactCustomizableProgressbar = ({
                 viewBox={`0 0 ${width} ${width}`}
                 style={{transform: `rotate(${rotate}deg)`}}
             >
-                {trackStrokeWidth > 0 && (
+                {trackStrokeWidth! > 0 && (
                     <circle
                         cx={width / 2}
                         cy={width / 2}
@@ -127,7 +153,7 @@ const ReactCustomizableProgressbar = ({
                         style={{ transition: trackTransition }}
                     />
                 )}
-                {strokeWidth > 0 && (
+                {strokeWidth! > 0 && (
                     <circle
                         cx={width / 2}
                         cy={width / 2}
@@ -147,7 +173,7 @@ const ReactCustomizableProgressbar = ({
                         style={{ transition }}
                     />
                 )}
-                {pointerRadius > 0 && (
+                {pointerRadius! > 0 && (
                     <circle
                         cx={d}
                         cy="50%"
@@ -170,39 +196,6 @@ const ReactCustomizableProgressbar = ({
         </div>
     )
 
-}
-
-ReactCustomizableProgressbar.propTypes = {
-    radius: PropTypes.number.isRequired,
-    progress: PropTypes.number.isRequired,
-    steps: PropTypes.number,
-    cut: PropTypes.number,
-    rotate: PropTypes.number,
-
-    strokeWidth: PropTypes.number,
-    strokeColor: PropTypes.string,
-    fillColor: PropTypes.string.isRequired,
-    strokeLinecap: PropTypes.string,
-    transition: PropTypes.string,
-
-    pointerRadius: PropTypes.number,
-    pointerStrokeWidth: PropTypes.number,
-    pointerStrokeColor: PropTypes.string,
-    pointerFillColor: PropTypes.string,
-
-    trackStrokeWidth: PropTypes.number,
-    trackStrokeColor: PropTypes.string,
-    trackStrokeLinecap: PropTypes.string,
-    trackTransition: PropTypes.string,
-
-    initialAnimation: PropTypes.bool,
-    initialAnimationDelay: PropTypes.number,
-
-    inverse: PropTypes.bool,
-    counterClockwise: PropTypes.bool,
-
-    children: PropTypes.element,
-    className: PropTypes.string
 }
 
 ReactCustomizableProgressbar.defaultProps = {
@@ -233,7 +226,7 @@ ReactCustomizableProgressbar.defaultProps = {
 
     initialAnimation: false,
     initialAnimationDelay: 0,
-    className: null
+    className: ''
 }
 
 export default ReactCustomizableProgressbar

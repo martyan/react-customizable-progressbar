@@ -20,8 +20,26 @@ module.exports = [
             libraryTarget: 'umd',
             globalObject: 'this'
         },
+        resolve: {
+            extensions: ['.js', '.jsx', '.ts', '.tsx']
+        },
         module: {
             rules: [
+                {
+                    test: /\.tsx?$/,
+                    exclude: /node_modules/,
+                    loader: 'awesome-typescript-loader',
+                    query: {
+                        options: {
+                            useCache: true,
+                            useBabel: true,
+                            babelCore: '@babel/core',
+                            reportFiles: [
+                                '**/*.{ts,tsx}',
+                            ],
+                        },
+                    }
+                },
                 {
                     test: /\.jsx?$/,
                     exclude: /node_modules/,
