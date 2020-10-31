@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
+//@ts-ignore
 import ProgressBar from 'react-customizable-progressbar'
+import { ExampleProps } from "./Examples"
 
-const CustomIndicator = ({ progress }) => (
+const CustomIndicator: FunctionComponent<ExampleProps> = ({ progress }) => (
     <div className="item">
         <div className="title">
             <span>Custom indicator</span>

@@ -9,7 +9,7 @@ module.exports = {
     target: 'web',
     context: SRC_PATH,
     devtool: 'inline-sourcemap',
-    entry: [/*'@babel/polyfill', */ 'react-hot-loader/patch', '../examples/index.js'],
+    entry: [/*'@babel/polyfill', */ 'react-hot-loader/patch', '../examples/index.tsx'],
     devServer: {
         historyApiFallback: true,
         hot: true

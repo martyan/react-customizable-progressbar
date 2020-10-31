@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
+//@ts-ignore
 import ProgressBar from 'react-customizable-progressbar'
+import { ExampleProps } from './Examples'
 
-const WithPointer = ({ progress }) => (
+const WithPointer: FunctionComponent<ExampleProps> = ({ progress }) => (
     <div className="item">
         <div className="title">
             <span>With pointer</span>

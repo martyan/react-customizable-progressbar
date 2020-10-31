@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
+//@ts-ignore
 import ProgressBar from 'react-customizable-progressbar'
+import { ExampleProps } from './Examples'
 
-const Cut = ({ progress }) => (
+const Basic: FunctionComponent<ExampleProps> = ({ progress }) => (
     <div className="item">
         <div className="title">
-            <span>Cut</span>
+            <span>Basic</span>
             <a
-                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Cut.js"
+                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Basic.js"
                 target="_blank"
             >
                 code <i className="fa fa-external-link-square" />
@@ -16,13 +18,10 @@ const Cut = ({ progress }) => (
         <ProgressBar
             radius={100}
             progress={progress}
-            strokeWidth={28}
-            strokeColor="#ffce54"
-            strokeLinecap="butt"
-            trackStrokeWidth={14}
-            trackStrokeLinecap="butt"
-            cut={120}
-            rotate={-210}
+            strokeWidth={18}
+            strokeColor="#5d9cec"
+            strokeLinecap="square"
+            trackStrokeWidth={18}
         >
             <div className="indicator">
                 <div>{progress}%</div>
@@ -31,4 +30,4 @@ const Cut = ({ progress }) => (
     </div>
 )
 
-export default Cut
+export default Basic
