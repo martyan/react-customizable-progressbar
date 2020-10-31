@@ -60,7 +60,7 @@ import ProgressBar from 'react-customizable-progressbar'
 | `inverse` | `bool` | `false` | Inverse |
 | `counterClockwise` | `bool` | `false` | Counter-clockwise |
 | `children` | `node` | `null` | Children - pass anything to show inside progress bar |
-| `className` | `string` | `null` | Progress bar class name |
+| `className` | `string` | `''` | Progress bar class name |
 
 
 ### Styles
