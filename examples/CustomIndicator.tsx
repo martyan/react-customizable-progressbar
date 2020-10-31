@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
+//@ts-ignore
 import ProgressBar from 'react-customizable-progressbar'
+import { ExampleProps } from "./Examples"
 
-const CustomIndicator = ({ progress }) => (
+const CustomIndicator: FunctionComponent<ExampleProps> = ({ progress }) => (
     <div className="item">
         <div className="title">
             <span>Custom indicator</span>
             <a
-                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/CustomIndicator.js"
+                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/CustomIndicator.tsx"
                 target="_blank"
             >
                 code <i className="fa fa-external-link-square" />

@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
+//@ts-ignore
 import ProgressBar from 'react-customizable-progressbar'
+import { ExampleProps } from './Examples'
 
-const CounterClockwise = ({ progress }) => (
+const CounterClockwise: FunctionComponent<ExampleProps> = ({ progress }) => (
     <div className="item">
         <div className="title">
             <span>Counter-clockwise</span>
             <a
-                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/CounterClockwise.js"
+                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/CounterClockwise.tsx"
                 target="_blank"
             >
                 code <i className="fa fa-external-link-square" />

@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
+//@ts-ignore
 import ProgressBar from 'react-customizable-progressbar'
+import { ExampleProps } from './Examples'
 
-const WithPointer = ({ progress }) => (
+const Basic: FunctionComponent<ExampleProps> = ({ progress }) => (
     <div className="item">
         <div className="title">
-            <span>With pointer</span>
+            <span>Basic</span>
             <a
-                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/WithPointer.js"
+                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Basic.tsx"
                 target="_blank"
             >
                 code <i className="fa fa-external-link-square" />
@@ -16,12 +18,10 @@ const WithPointer = ({ progress }) => (
         <ProgressBar
             radius={100}
             progress={progress}
-            strokeWidth={4}
-            strokeColor="indianred"
-            trackStrokeWidth={4}
-            pointerRadius={8}
-            pointerStrokeWidth={5}
-            pointerStrokeColor="indianred"
+            strokeWidth={18}
+            strokeColor="#5d9cec"
+            strokeLinecap="square"
+            trackStrokeWidth={18}
         >
             <div className="indicator">
                 <div>{progress}%</div>
@@ -30,4 +30,4 @@ const WithPointer = ({ progress }) => (
     </div>
 )
 
-export default WithPointer
+export default Basic

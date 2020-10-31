@@ -9,7 +9,7 @@ module.exports = {
     target: 'web',
     context: SRC_PATH,
     devtool: 'inline-sourcemap',
-    entry: [/*'@babel/polyfill', */ 'react-hot-loader/patch', '../examples/index.js'],
+    entry: [/*'@babel/polyfill', */ 'react-hot-loader/patch', '../examples/index.tsx'],
     devServer: {
         historyApiFallback: true,
         hot: true
@@ -17,10 +17,26 @@ module.exports = {
     resolve: {
         alias: {
             'react-customizable-progressbar': SRC_PATH + '/ReactCustomizableProgressbar'
-        }
+        },
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
     },
     module: {
         rules: [
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                loader: 'awesome-typescript-loader',
+                query: {
+                    options: {
+                        useCache: true,
+                        useBabel: true,
+                        babelCore: '@babel/core',
+                        reportFiles: [
+                            '**/*.{ts,tsx}',
+                        ],
+                    },
+                }
+            },
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
@@ -33,7 +49,8 @@ module.exports = {
                         '@babel/plugin-proposal-object-rest-spread'
                     ]
                 }
-            }, {
+            },
+            {
                 test: /\.(scss|css)$/,
                 loaders: [
                     'style-loader',

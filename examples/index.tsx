@@ -5,7 +5,7 @@ import Examples from './Examples'
 
 const render = () => {
     ReactDOM.render(
-        <AppContainer warnings={false}>
+        <AppContainer>
             <Examples />
         </AppContainer>,
         document.getElementById('app')
@@ -14,7 +14,7 @@ const render = () => {
 
 render()
 
-if (module.hot) {
+if(module.hot) {
     module.hot.accept('./Examples', () => {
         render()
     })
