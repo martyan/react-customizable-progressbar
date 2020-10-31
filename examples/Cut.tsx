@@ -8,7 +8,7 @@ const Cut: FunctionComponent<ExampleProps> = ({ progress }) => (
         <div className="title">
             <span>Cut</span>
             <a
-                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Cut.js"
+                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Cut.tsx"
                 target="_blank"
             >
                 code <i className="fa fa-external-link-square" />

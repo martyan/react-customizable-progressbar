@@ -67,7 +67,7 @@ const Countdown: FunctionComponent = () => {
             <div className="title">
                 <span>Countdown</span>
                 <a
-                    href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Countdown.js"
+                    href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Countdown.tsx"
                     target="_blank"
                 >
                     code <i className="fa fa-external-link-square" />

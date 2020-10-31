@@ -8,7 +8,7 @@ const CustomIndicator: FunctionComponent<ExampleProps> = ({ progress }) => (
         <div className="title">
             <span>Custom indicator</span>
             <a
-                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/CustomIndicator.js"
+                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/CustomIndicator.tsx"
                 target="_blank"
             >
                 code <i className="fa fa-external-link-square" />

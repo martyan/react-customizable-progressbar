@@ -8,7 +8,7 @@ const InverseProgress: FunctionComponent<ExampleProps> = ({ progress }) => (
         <div className="title">
             <span>Inverse progress</span>
             <a
-                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/InverseProgress.js"
+                href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/InverseProgress.tsx"
                 target="_blank"
             >
                 code <i className="fa fa-external-link-square" />
