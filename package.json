@@ -1,6 +1,6 @@
 {
     "name": "react-customizable-progressbar",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "main": "./dist/ReactCustomizableProgressbar.js",
     "types": "./dist/ReactCustomizableProgressbar.d.ts",
     "files": [
