@@ -28,8 +28,8 @@ module.exports = [
                 {
                     test: /\.tsx?$/,
                     exclude: /node_modules/,
-                    loader: 'awesome-typescript-loader',
-                    query: {
+                    use: {
+                        loader: 'awesome-typescript-loader',
                         options: {
                             useCache: true,
                             useBabel: true,
@@ -38,13 +38,13 @@ module.exports = [
                                 '**/*.{ts,tsx}',
                             ],
                         },
-                    }
+                    },
                 },
                 {
                     test: /\.jsx?$/,
                     exclude: /node_modules/,
                     loader: 'babel-loader',
-                    query: {
+                    options: {
                         presets: [['@babel/preset-env', { modules: false }], '@babel/preset-react'],
                         plugins: [
                             '@babel/plugin-proposal-class-properties',
@@ -61,8 +61,7 @@ module.exports = [
             new webpack.EnvironmentPlugin({
                 NODE_ENV: 'production'
             }),
-            new CleanWebpackPlugin(DIST_PATH),
-            new webpack.optimize.OccurrenceOrderPlugin()
+            new CleanWebpackPlugin(DIST_PATH)
         ],
         optimization: {
             minimize: true,

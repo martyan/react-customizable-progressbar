@@ -8,7 +8,7 @@
     ],
     "scripts": {
         "dev": "webpack serve --content-base src --inline --config webpack.config.dev.js",
-        "prod": "node ./node_modules/webpack/bin/webpack.js -p --progress --config ./webpack.config.prod.js"
+        "prod": "node ./node_modules/webpack/bin/webpack.js --progress --config ./webpack.config.prod.js"
     },
     "repository": {
         "type": "git",
