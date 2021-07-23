@@ -8,7 +8,7 @@ module.exports = {
     mode: 'development',
     target: 'web',
     context: SRC_PATH,
-    devtool: 'inline-sourcemap',
+    devtool: 'inline-cheap-source-map',
     entry: [/*'@babel/polyfill', */ 'react-hot-loader/patch', '../examples/index.tsx'],
     devServer: {
         historyApiFallback: true,
@@ -18,30 +18,23 @@ module.exports = {
         alias: {
             'react-customizable-progressbar': SRC_PATH + '/ReactCustomizableProgressbar'
         },
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        fallback: {
+            fs: false
+        }
     },
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
-                loader: 'awesome-typescript-loader',
-                query: {
-                    options: {
-                        useCache: true,
-                        useBabel: true,
-                        babelCore: '@babel/core',
-                        reportFiles: [
-                            '**/*.{ts,tsx}',
-                        ],
-                    },
-                }
+                loader: 'ts-loader',
             },
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
-                query: {
+                options: {
                     presets: [['@babel/preset-env', { modules: false }], '@babel/preset-react'],
                     plugins: [
                         'react-hot-loader/babel',
@@ -52,11 +45,11 @@ module.exports = {
             },
             {
                 test: /\.(scss|css)$/,
-                loaders: [
+                use: [
                     'style-loader',
-                    'css-loader?sourceMap',
-                    'postcss-loader?sourceMap',
-                    'sass-loader?sourceMap'
+                    {loader: 'css-loader', options: {sourceMap: true}},
+                    {loader: 'postcss-loader', options: {sourceMap: true}},
+                    {loader: 'sass-loader', options: {sourceMap: true}}
                 ]
             }
         ]
@@ -67,9 +60,6 @@ module.exports = {
         chunkFilename: '[name].[hash:5].js',
         publicPath: '/'
     },
-    node: {
-        fs: 'empty'
-    },
     plugins: [
         new webpack.EnvironmentPlugin({
             NODE_ENV: 'development'
@@ -79,7 +69,6 @@ module.exports = {
             filename: 'index.html',
             inject: 'body'
         }),
-        new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ]
 };
