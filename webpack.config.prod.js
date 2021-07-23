@@ -28,17 +28,7 @@ module.exports = [
                 {
                     test: /\.tsx?$/,
                     exclude: /node_modules/,
-                    use: {
-                        loader: 'awesome-typescript-loader',
-                        options: {
-                            useCache: true,
-                            useBabel: true,
-                            babelCore: '@babel/core',
-                            reportFiles: [
-                                '**/*.{ts,tsx}',
-                            ],
-                        },
-                    },
+                    loader: 'ts-loader'
                 },
                 {
                     test: /\.jsx?$/,

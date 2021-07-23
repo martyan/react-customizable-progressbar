@@ -28,17 +28,7 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'awesome-typescript-loader',
-                    options: {
-                        useCache: true,
-                        useBabel: true,
-                        babelCore: '@babel/core',
-                        reportFiles: [
-                            '**/*.{ts,tsx}',
-                        ],
-                    },
-                }
+                loader: 'ts-loader',
             },
             {
                 test: /\.jsx?$/,
@@ -57,8 +47,8 @@ module.exports = {
                 test: /\.(scss|css)$/,
                 use: [
                     'style-loader',
-                    'css-loader?sourceMap',
-                    'postcss-loader?sourceMap',
+                    {loader: 'css-loader', options: {sourceMap: true}},
+                    {loader: 'postcss-loader', options: {sourceMap: true}},
                     {loader: 'sass-loader', options: {sourceMap: true}}
                 ]
             }
