@@ -9,7 +9,7 @@ module.exports = {
     target: 'web',
     context: SRC_PATH,
     devtool: 'inline-cheap-source-map',
-    entry: [/*'@babel/polyfill', */ 'react-hot-loader/patch', '../examples/index.tsx'],
+    entry: [/*'@babel/polyfill', */'../examples/index.tsx'],
     devServer: {
         historyApiFallback: true,
         hot: true
@@ -68,7 +68,6 @@ module.exports = {
             template: path.resolve(__dirname, 'examples/assets/index.html'),
             filename: 'index.html',
             inject: 'body'
-        }),
-        new webpack.HotModuleReplacementPlugin()
+        })
     ]
 };
