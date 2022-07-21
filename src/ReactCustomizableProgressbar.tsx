@@ -57,9 +57,10 @@ const ReactCustomizableProgressbar: FunctionComponent<ReactCustomizableProgressb
     const [ animationInited, setAnimationInited ] = useState(false)
 
     useEffect(() => {
-        if(initialAnimation) {
-            setTimeout(() => setAnimationInited(true), initialAnimationDelay)
-        }
+        let timeout: NodeJS.Timeout
+        if(initialAnimation) timeout = setTimeout(() => setAnimationInited(true), initialAnimationDelay)
+
+        return () => clearTimeout(timeout)
     }, [])
 
     const getProgress = () => initialAnimation && !animationInited ? 0 : progress
