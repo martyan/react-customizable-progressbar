@@ -56,8 +56,8 @@ module.exports = {
     },
     output: {
         path: SRC_PATH,
-        filename: '[name].[hash:5].js',
-        chunkFilename: '[name].[hash:5].js',
+        filename: '[name].[fullHash:5].js',
+        chunkFilename: '[name].[fullHash:5].js',
         publicPath: '/'
     },
     plugins: [
