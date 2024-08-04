@@ -1,6 +1,6 @@
 import React, {FunctionComponent, ReactNode, useEffect, useState} from 'react'
 
-export type ReactCustomizableProgressbarProps = {
+type ReactCustomizableProgressbarProps = {
     radius: number,
     progress: number,
     steps?: number,
@@ -28,30 +28,30 @@ export type ReactCustomizableProgressbarProps = {
 }
 
 const ReactCustomizableProgressbar: FunctionComponent<ReactCustomizableProgressbarProps> = ({
-    radius,
-    progress,
-    steps,
-    cut,
-    rotate,
-    strokeWidth,
-    strokeColor,
-    fillColor,
-    strokeLinecap,
-    transition,
-    pointerRadius,
-    pointerStrokeWidth,
-    pointerStrokeColor,
-    pointerFillColor,
-    trackStrokeColor,
-    trackStrokeWidth,
-    trackStrokeLinecap,
-    trackTransition,
-    counterClockwise,
-    inverse,
-    initialAnimation,
-    initialAnimationDelay,
-    className,
-    children
+    radius = defaultProps.radius,
+    progress = defaultProps.progress,
+    steps = defaultProps.steps,
+    cut = defaultProps.cut,
+    rotate = defaultProps.rotate,
+    strokeWidth = defaultProps.strokeWidth,
+    strokeColor = defaultProps.strokeColor,
+    fillColor = defaultProps.fillColor,
+    strokeLinecap = defaultProps.strokeLinecap,
+    transition = defaultProps.transition,
+    pointerRadius = defaultProps.pointerRadius,
+    pointerStrokeWidth = defaultProps.pointerStrokeWidth,
+    pointerStrokeColor = defaultProps.pointerStrokeColor,
+    pointerFillColor = defaultProps.pointerFillColor,
+    trackStrokeColor = defaultProps.trackStrokeColor,
+    trackStrokeWidth = defaultProps.trackStrokeWidth,
+    trackStrokeLinecap = defaultProps.trackStrokeLinecap,
+    trackTransition = defaultProps.trackTransition,
+    counterClockwise = defaultProps.counterClockwise,
+    inverse = defaultProps.inverse,
+    initialAnimation = defaultProps.initialAnimation,
+    initialAnimationDelay = defaultProps.initialAnimationDelay,
+    className = defaultProps.className,
+    children = defaultProps.children
 }) => {
 
     const [ animationInited, setAnimationInited ] = useState(false)
@@ -199,35 +199,30 @@ const ReactCustomizableProgressbar: FunctionComponent<ReactCustomizableProgressb
 
 }
 
-ReactCustomizableProgressbar.defaultProps = {
+const defaultProps: ReactCustomizableProgressbarProps = {
     radius: 100,
     progress: 0,
     steps: 100,
     cut: 0,
     rotate: -90,
-
     strokeWidth: 20,
     strokeColor: 'indianred',
     fillColor: 'none',
     strokeLinecap: 'round',
     transition: '.3s ease',
-
     pointerRadius: 0,
     pointerStrokeWidth: 20,
     pointerStrokeColor: 'indianred',
     pointerFillColor: 'white',
-
     trackStrokeColor: '#e6e6e6',
     trackStrokeWidth: 20,
     trackStrokeLinecap: 'round',
     trackTransition: '.3s ease',
-
     counterClockwise: false,
     inverse: false,
-
     initialAnimation: false,
     initialAnimationDelay: 0,
     className: ''
-}
+  }
 
 export default ReactCustomizableProgressbar
