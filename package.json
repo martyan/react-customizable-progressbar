@@ -1,10 +1,14 @@
 {
   "name": "react-customizable-progressbar",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Customizable circular SVG progress bar component for React",
   "main": "./dist/index.cjs.js",
-  "module": "./dist/index.esm.js",
+  "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
+  "exports:": {
+    "import": "./dist/index.es.js",
+    "require": "./dist/index.cjs.js"
+  },
   "files": [
     "dist"
   ],
@@ -48,6 +52,7 @@
     "sass": "^1.77.8",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
+    "vite-plugin-dts": "^4.3.0",
     "vite-plugin-eslint": "^1.6.0"
   },
   "peerDependencies": {
