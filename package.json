@@ -35,8 +35,8 @@
   "author": "Martin Juzl",
   "license": "MIT",
   "devDependencies": {
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
+    "@types/react": "^19.1.5",
+    "@types/react-dom": "^19.1.5",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "@vitejs/plugin-react": "^3.1.0",
@@ -49,6 +49,8 @@
     "postcss": "^8.4.16",
     "postcss-loader": "^7.0.1",
     "prettier": "^3.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "sass": "^1.77.8",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
@@ -56,7 +58,7 @@
     "vite-plugin-eslint": "^1.6.0"
   },
   "peerDependencies": {
-    "react": "^16.14.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.14.0 || ^17.0.0 || ^18.0.0"
+    "react": "^16.14.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^16.14.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
   }
 }
