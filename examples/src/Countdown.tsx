@@ -66,6 +66,7 @@ const Countdown = () => {
         <a
           href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Countdown.tsx"
           target="_blank"
+          rel="noreferrer"
         >
           code <i className="fa fa-external-link-square" />
         </a>
@@ -84,7 +85,7 @@ const Countdown = () => {
           pointerStrokeWidth={2}
           pointerStrokeColor="indianred"
         >
-          <Indicator progress={progress} elapsedSeconds={elapsedSeconds} />
+          <Indicator elapsedSeconds={elapsedSeconds} />
         </ProgressBar>
 
         <Timer
