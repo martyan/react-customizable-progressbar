@@ -1,3 +1,8 @@
+# [2.1.1] - 2025-07-09
+
+## Fixes
+- React 19 - TypeError - Cannot read properties of undefined (reading 'recentlyCreatedOwnerStacks') #54
+
 # [2.1.0] - 2025-06-10
 
 ## Features
