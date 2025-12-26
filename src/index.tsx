@@ -28,30 +28,30 @@ export type ReactCustomizableProgressbarProps = {
 };
 
 const Index = ({
-  radius = defaultProps.radius,
-  progress = defaultProps.progress,
-  steps = defaultProps.steps,
-  cut = defaultProps.cut,
-  rotate = defaultProps.rotate,
-  strokeWidth = defaultProps.strokeWidth,
-  strokeColor = defaultProps.strokeColor,
-  fillColor = defaultProps.fillColor,
-  strokeLinecap = defaultProps.strokeLinecap,
-  transition = defaultProps.transition,
-  pointerRadius = defaultProps.pointerRadius,
-  pointerStrokeWidth = defaultProps.pointerStrokeWidth,
-  pointerStrokeColor = defaultProps.pointerStrokeColor,
-  pointerFillColor = defaultProps.pointerFillColor,
-  trackStrokeColor = defaultProps.trackStrokeColor,
-  trackStrokeWidth = defaultProps.trackStrokeWidth,
-  trackStrokeLinecap = defaultProps.trackStrokeLinecap,
-  trackTransition = defaultProps.trackTransition,
-  counterClockwise = defaultProps.counterClockwise,
-  inverse = defaultProps.inverse,
-  initialAnimation = defaultProps.initialAnimation,
-  initialAnimationDelay = defaultProps.initialAnimationDelay,
-  className = defaultProps.className,
-  children = defaultProps.children,
+  radius = 100,
+  progress = 0,
+  steps = 100,
+  cut = 0,
+  rotate = -90,
+  strokeWidth = 20,
+  strokeColor = 'indianred',
+  fillColor = 'none',
+  strokeLinecap = 'round',
+  transition = '.3s ease',
+  pointerRadius = 0,
+  pointerStrokeWidth = 20,
+  pointerStrokeColor = 'indianred',
+  pointerFillColor = 'white',
+  trackStrokeColor = '#e6e6e6',
+  trackStrokeWidth = 20,
+  trackStrokeLinecap = 'round',
+  trackTransition = '.3s ease',
+  counterClockwise = false,
+  inverse = false,
+  initialAnimation = false,
+  initialAnimationDelay = 0,
+  className = '',
+  children,
 }: ReactCustomizableProgressbarProps) => {
   const [animationInited, setAnimationInited] = useState(false);
 
@@ -71,7 +71,7 @@ const Index = ({
 
   const getStrokeDashoffset = (strokeLength: number) => {
     const progress = getProgress();
-    const progressLength = (strokeLength / steps!) * (steps! - progress);
+    const progressLength = (strokeLength / steps) * (steps - progress);
 
     if (inverse) {
       return counterClockwise ? 0 : progressLength - strokeLength;
@@ -82,7 +82,7 @@ const Index = ({
 
   const getStrokeDashArray = (strokeLength: number, circumference: number) => {
     const progress = getProgress();
-    const progressLength = (strokeLength / steps!) * (steps! - progress);
+    const progressLength = (strokeLength / steps) * (steps - progress);
 
     if (inverse) {
       return `${progressLength}, ${circumference}`;
@@ -105,30 +105,30 @@ const Index = ({
   };
 
   const getExtendedWidth = () => {
-    const pointerWidth = pointerRadius! + pointerStrokeWidth!;
+    const pointerWidth = pointerRadius + pointerStrokeWidth;
 
-    if (pointerWidth > strokeWidth! && pointerWidth > trackStrokeWidth!) {
+    if (pointerWidth > strokeWidth && pointerWidth > trackStrokeWidth) {
       return pointerWidth * 2;
-    } else if (strokeWidth! > trackStrokeWidth!) {
-      return strokeWidth! * 2;
+    } else if (strokeWidth > trackStrokeWidth) {
+      return strokeWidth * 2;
     }
 
-    return trackStrokeWidth! * 2;
+    return trackStrokeWidth * 2;
   };
 
   const getPointerAngle = () => {
     const progress = getProgress();
 
     return counterClockwise
-      ? ((360 - cut!) / steps!) * (steps! - progress)
-      : ((360 - cut!) / steps!) * progress;
+      ? ((360 - cut) / steps) * (steps - progress)
+      : ((360 - cut) / steps) * progress;
   };
 
   const d = 2 * radius;
   const width = d + getExtendedWidth();
 
   const circumference = 2 * Math.PI * radius;
-  const strokeLength = (circumference / 360) * (360 - cut!);
+  const strokeLength = (circumference / 360) * (360 - cut);
 
   return (
     <div
@@ -144,7 +144,7 @@ const Index = ({
         viewBox={`0 0 ${width} ${width}`}
         style={{ transform: `rotate(${rotate}deg)` }}
       >
-        {trackStrokeWidth! > 0 && (
+        {trackStrokeWidth > 0 && (
           <circle
             cx={width / 2}
             cy={width / 2}
@@ -161,7 +161,7 @@ const Index = ({
             style={{ transition: trackTransition }}
           />
         )}
-        {strokeWidth! > 0 && (
+        {strokeWidth > 0 && (
           <circle
             cx={width / 2}
             cy={width / 2}
@@ -176,7 +176,7 @@ const Index = ({
             style={{ transition }}
           />
         )}
-        {pointerRadius! > 0 && (
+        {pointerRadius > 0 && (
           <circle
             cx={d}
             cy="50%"
@@ -199,32 +199,6 @@ const Index = ({
       {children || null}
     </div>
   );
-};
-
-const defaultProps: ReactCustomizableProgressbarProps = {
-  radius: 100,
-  progress: 0,
-  steps: 100,
-  cut: 0,
-  rotate: -90,
-  strokeWidth: 20,
-  strokeColor: 'indianred',
-  fillColor: 'none',
-  strokeLinecap: 'round',
-  transition: '.3s ease',
-  pointerRadius: 0,
-  pointerStrokeWidth: 20,
-  pointerStrokeColor: 'indianred',
-  pointerFillColor: 'white',
-  trackStrokeColor: '#e6e6e6',
-  trackStrokeWidth: 20,
-  trackStrokeLinecap: 'round',
-  trackTransition: '.3s ease',
-  counterClockwise: false,
-  inverse: false,
-  initialAnimation: false,
-  initialAnimationDelay: 0,
-  className: '',
 };
 
 export default Index;
