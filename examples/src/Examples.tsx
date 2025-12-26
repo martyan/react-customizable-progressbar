@@ -17,7 +17,9 @@ const Examples = () => {
   return (
     <div className="font-['Roboto',sans-serif]">
       <div className="max-w-[280px] hidden sm:flex my-[30px] mx-auto justify-between items-center">
-        <div className="inline-block text-[1.05em] text-[#777] font-light">Progress</div>
+        <div className="inline-block text-[1.05em] text-[#777] font-light">
+          Progress
+        </div>
         <input
           type="range"
           value={progress}

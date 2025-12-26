@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ProgressBar from 'react-customizable-progressbar';
 import { startOfDay, setSeconds, getHours, getMinutes, format } from 'date-fns';
 import Timer from './Timer';
+import ExampleCard from './ExampleCard';
 
 const totalSeconds = 60;
 const initialSeconds = 15;
@@ -27,10 +28,22 @@ const Indicator = ({ elapsedSeconds }: IndicatorProps) => {
   return (
     <div className="flex items-center justify-center text-center absolute top-0 w-full h-full m-auto text-[1.3em]">
       <div>
-        <div className={seconds > 0 ? 'text-[0.8em] font-thin text-[#777] mb-[5px] transition-all duration-300' : 'text-[0.8em] font-thin mb-0 text-[1.1em] text-[indianred] transition-all duration-300 animate-blinking'}>
+        <div
+          className={
+            seconds > 0
+              ? 'text-[0.8em] font-thin text-[#777] mb-[5px] transition-all duration-300'
+              : 'text-[1.1em] font-thin mb-0 text-[indianred] transition-all duration-300 animate-blinking'
+          }
+        >
           Popcorn ready {seconds > 0 && <span>in</span>}
         </div>
-        <div className={seconds > 0 ? 'text-[1.6em] font-thin max-h-[100px] transition-all duration-300' : 'text-[1.6em] font-thin max-h-0 overflow-hidden text-white transition-all duration-300'}>
+        <div
+          className={
+            seconds > 0
+              ? 'text-[1.6em] font-thin max-h-[100px] transition-all duration-300'
+              : 'text-[1.6em] font-thin max-h-0 overflow-hidden text-white transition-all duration-300'
+          }
+        >
           {getText(date)}
         </div>
       </div>
@@ -57,19 +70,10 @@ const Countdown = () => {
   };
 
   return (
-    <div className="basis-[236px] shrink-0 grow-0 py-[5px] px-[15px] bg-white rounded-[5px] m-[30px]">
-      <div className="flex justify-between items-center py-[15px] px-[5px] mb-5 font-normal uppercase text-[#666] border-b border-[#f5f5f5] text-[0.9em]">
-        <span className="flex-1 mr-[10px]">Countdown</span>
-        <a
-          href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Countdown.tsx"
-          target="_blank"
-          rel="noreferrer"
-          className="no-underline text-[#ccc] text-[0.9em]"
-        >
-          code <i className="fa fa-external-link-square" />
-        </a>
-      </div>
-
+    <ExampleCard
+      title="Countdown"
+      href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Countdown.tsx"
+    >
       <div className="flex justify-center">
         <ProgressBar
           radius={100}
@@ -93,7 +97,7 @@ const Countdown = () => {
           interval={1000}
         />
       </div>
-    </div>
+    </ExampleCard>
   );
 };
 

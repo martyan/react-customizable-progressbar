@@ -30,9 +30,13 @@ const Timer = ({
     clear(intervalId);
 
     const newIntervalId = window.setInterval(() => {
-      if (elapsed + initialSeconds === totalSeconds) return;
-
-      setElapsed((elapsed) => elapsed + 1);
+      setElapsed((prevElapsed) => {
+        if (prevElapsed + initialSeconds >= totalSeconds) {
+          window.clearInterval(newIntervalId);
+          return prevElapsed;
+        }
+        return prevElapsed + 1;
+      });
       setIntervalId(newIntervalId);
     }, interval);
   };
