@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import ProgressBar from 'react-customizable-progressbar';
-import moment, { Moment } from 'moment';
+import { startOfDay, setSeconds, getHours, getMinutes, format } from 'date-fns';
 import Timer from './Timer';
 import './Countdown.scss';
 
@@ -10,13 +10,13 @@ const totalSeconds = 60;
 const initialSeconds = 15;
 const initialProgress = (initialSeconds / totalSeconds) * 100;
 
-const getText = (date: Moment) => {
-  const h = date.hour();
-  const m = date.minute();
+const getText = (date: Date) => {
+  const h = getHours(date);
+  const m = getMinutes(date);
 
-  if (h) return date.format('h[h] m[m] s[s]');
-  else if (m) return date.format('m[m] s[s]');
-  else return date.format('s[s]');
+  if (h) return format(date, "h'h' m'm' s's'");
+  else if (m) return format(date, "m'm' s's'");
+  else return format(date, "s's'");
 };
 
 interface IndicatorProps {
@@ -25,7 +25,7 @@ interface IndicatorProps {
 
 const Indicator = ({ elapsedSeconds }: IndicatorProps) => {
   const seconds = totalSeconds - elapsedSeconds - initialSeconds;
-  const date = moment().startOf('day').seconds(seconds);
+  const date = setSeconds(startOfDay(new Date()), seconds);
 
   return (
     <div className="indicator-countdown">
@@ -81,7 +81,7 @@ const Countdown = () => {
           trackStrokeWidth={3}
           trackStrokeColor="#e6e6e6"
           pointerRadius={5}
-          pointerFill="white"
+          pointerFillColor="white"
           pointerStrokeWidth={2}
           pointerStrokeColor="indianred"
         >
