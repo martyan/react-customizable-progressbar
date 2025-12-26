@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@keyframes blinking {
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blinking {
+  animation: blinking 1s step-start 0s infinite;
+}

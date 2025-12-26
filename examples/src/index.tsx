@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Examples from './Examples';
+import './index.css';
 
 const App = () => <Examples />;
 

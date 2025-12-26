@@ -7,6 +7,9 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   plugins: ['@typescript-eslint', 'react', 'prettier'],
+  env: {
+    node: true,
+  },
   rules: {
     'prettier/prettier': 'error',
   },
