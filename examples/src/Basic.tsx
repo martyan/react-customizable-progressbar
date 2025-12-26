@@ -1,6 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import ProgressBar from 'react-customizable-progressbar';
 import { ExampleProps } from './Examples';
 

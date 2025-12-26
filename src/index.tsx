@@ -1,11 +1,6 @@
-import React, {
-  FunctionComponent,
-  ReactNode,
-  useEffect,
-  useState,
-} from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 
-type ReactCustomizableProgressbarProps = {
+export type ReactCustomizableProgressbarProps = {
   radius: number;
   progress: number;
   steps?: number;
@@ -32,7 +27,7 @@ type ReactCustomizableProgressbarProps = {
   children?: ReactNode;
 };
 
-const Index: FunctionComponent<ReactCustomizableProgressbarProps> = ({
+const Index = ({
   radius = defaultProps.radius,
   progress = defaultProps.progress,
   steps = defaultProps.steps,
@@ -57,7 +52,7 @@ const Index: FunctionComponent<ReactCustomizableProgressbarProps> = ({
   initialAnimationDelay = defaultProps.initialAnimationDelay,
   className = defaultProps.className,
   children = defaultProps.children,
-}) => {
+}: ReactCustomizableProgressbarProps) => {
   const [animationInited, setAnimationInited] = useState(false);
 
   useEffect(() => {
