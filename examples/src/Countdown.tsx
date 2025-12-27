@@ -72,7 +72,7 @@ const Countdown = () => {
   return (
     <ExampleCard
       title="Countdown"
-      href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Countdown.tsx"
+      href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/src/Countdown.tsx"
     >
       <div className="flex justify-center">
         <ProgressBar

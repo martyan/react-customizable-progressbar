@@ -6,7 +6,7 @@ import ExampleCard from './ExampleCard';
 const WithPointer = ({ progress }: ExampleProps) => (
   <ExampleCard
     title="With pointer"
-    href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/WithPointer.tsx"
+    href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/src/WithPointer.tsx"
   >
     <ProgressBar
       radius={100}

@@ -6,7 +6,7 @@ import ExampleCard from './ExampleCard';
 const CounterClockwise = ({ progress }: ExampleProps) => (
   <ExampleCard
     title="Counter-clockwise"
-    href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/CounterClockwise.tsx"
+    href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/src/CounterClockwise.tsx"
   >
     <ProgressBar
       radius={100}

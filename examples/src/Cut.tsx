@@ -6,7 +6,7 @@ import ExampleCard from './ExampleCard';
 const Cut = ({ progress }: ExampleProps) => (
   <ExampleCard
     title="Cut"
-    href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Cut.tsx"
+    href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/src/Cut.tsx"
   >
     <ProgressBar
       radius={100}

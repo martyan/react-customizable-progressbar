@@ -6,7 +6,7 @@ import ExampleCard from './ExampleCard';
 const InverseProgress = ({ progress }: ExampleProps) => (
   <ExampleCard
     title="Inverse progress"
-    href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/InverseProgress.tsx"
+    href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/src/InverseProgress.tsx"
   >
     <ProgressBar
       radius={100}

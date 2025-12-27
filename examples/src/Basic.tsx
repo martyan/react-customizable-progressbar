@@ -6,7 +6,7 @@ import ExampleCard from './ExampleCard';
 const Basic = ({ progress }: ExampleProps) => (
   <ExampleCard
     title="Basic"
-    href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/Basic.tsx"
+    href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/src/Basic.tsx"
   >
     <ProgressBar
       radius={100}

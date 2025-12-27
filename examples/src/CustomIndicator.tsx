@@ -7,7 +7,7 @@ import ExampleCard from './ExampleCard';
 const CustomIndicator = ({ progress }: ExampleProps) => (
   <ExampleCard
     title="Custom indicator"
-    href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/CustomIndicator.tsx"
+    href="https://github.com/martyan/react-customizable-progressbar/blob/master/examples/src/CustomIndicator.tsx"
   >
     <ProgressBar
       radius={100}
