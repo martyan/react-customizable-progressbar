@@ -9,8 +9,8 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
     "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
+    "declarationMap": false,
+    "sourceMap": false,
     "moduleResolution": "bundler",
     "resolveJsonModule": true
   },

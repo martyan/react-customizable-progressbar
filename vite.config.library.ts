@@ -13,6 +13,7 @@ export default defineConfig({
     }),
   ],
   build: {
+    minify: 'esbuild',
     lib: {
       entry: resolve(__dirname, 'src/index.tsx'),
       name: 'ReactCustomizableProgressbar',
@@ -20,7 +21,7 @@ export default defineConfig({
       formats: ['es', 'cjs'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
         globals: {
           react: 'React',

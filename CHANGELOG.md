@@ -1,3 +1,8 @@
+# [2.1.3] - 2025-12-27
+
+## Fixes
+- Reduce package size
+
 # [2.1.2] - 2025-12-26
 
 ## Fixes
